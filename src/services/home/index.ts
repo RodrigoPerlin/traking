@@ -7,7 +7,8 @@ export const searchDepositions = async () => {
         const result = await api.get(SEARCH_DEPOSITIONS)
         return result.data
     } catch (error) {
+        // eslint-disable-next-line no-console
         console.error('Erro na chamada à API:', error)
-        throw error
+        return []
     }
 }

@@ -1,16 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-type Data = Array<{
+type TData = Array<{
     sku: string
     name: string
     testimony: string
 }>
 
-// eslint-disable-next-line @typescript-eslint/space-before-function-paren
-export default function handler(
-    req: NextApiRequest,
-    res: NextApiResponse<Data>
-) {
+const handler = async (req: NextApiRequest, res: NextApiResponse<TData>) => {
     res.status(200).json([
         {
             sku: '123rwwe',
@@ -38,3 +34,4 @@ export default function handler(
         },
     ])
 }
+export default handler
