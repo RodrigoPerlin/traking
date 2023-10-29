@@ -9,10 +9,10 @@ interface IResutls {
     city_end: string
 }
 
-type TData = Array<{
+interface IData {
     code: string
     results: IResutls[]
-}>
+}
 
 const mock = [
     {
@@ -22,33 +22,33 @@ const mock = [
                 id: '1',
                 date: '27/10',
                 status: 'criado',
-                details: 'Criado na central',
-                city_start: 'cidade_inicio',
-                city_end: 'city_start',
+                details: 'Ultima atualilzacao em Toledo',
+                city_start: 'Frederico',
+                city_end: 'Toledo',
             },
             {
                 id: '2',
                 date: '27/10',
                 status: 'despacho',
-                details: 'Criado na central',
-                city_start: 'cidade_inicio',
-                city_end: 'city_start',
+                details: 'Ultima atualilzacao em Cascavel',
+                city_start: 'Frederico',
+                city_end: 'Toledo',
             },
             {
                 id: '3',
                 date: '28/10',
                 status: 'transito',
-                details: 'Criado na central',
-                city_start: 'cidade_inicio',
-                city_end: 'city_start',
+                details: 'Ultima atualilzacao em Chapeco',
+                city_start: 'Frederico',
+                city_end: 'Toledo',
             },
             {
                 id: '4',
                 date: '30/10',
                 status: 'saiu_entrega',
-                details: 'Criado na central',
-                city_start: 'cidade_inicio',
-                city_end: 'city_start',
+                details: 'Ultima atualilzacao em Pato Branco',
+                city_start: 'Frederico',
+                city_end: 'Toledo',
             },
         ],
     },
@@ -75,11 +75,11 @@ const mock = [
     },
 ]
 
-const handler = async (req: NextApiRequest, res: NextApiResponse<TData>) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse<IData>) => {
     const { code } = req.query
     const output = mock.filter((item) => item.code === code)
     setTimeout(() => {
-        res.status(200).json({ ...output })
-    }, 4000)
+        res.status(200).json({ ...output[0] })
+    }, 2000)
 }
 export default handler

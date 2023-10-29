@@ -30,6 +30,12 @@ const Table = ({ info }: ITable) => {
                         <S.StyledColumm data-testid="status-detalhes">
                             Detalhes
                         </S.StyledColumm>
+                        <S.StyledColumm data-testid="status-detalhes">
+                            Cidade Inicial
+                        </S.StyledColumm>
+                        <S.StyledColumm data-testid="status-detalhes">
+                            Cidade da entrega
+                        </S.StyledColumm>
                     </tr>
                 </S.Head>
                 <tbody>
@@ -41,6 +47,12 @@ const Table = ({ info }: ITable) => {
                             </S.StyledTd>
                             <S.StyledTd key={item.details + index}>
                                 {item.details}
+                            </S.StyledTd>
+                            <S.StyledTd key={item.city_start + index}>
+                                {item.city_start}
+                            </S.StyledTd>
+                            <S.StyledTd key={item.city_end + index}>
+                                {item.city_end}
                             </S.StyledTd>
                         </S.StyledTr>
                     ))}

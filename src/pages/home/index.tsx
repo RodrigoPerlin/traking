@@ -38,7 +38,7 @@ const Home = ({ lists }: IHomeProps) => {
             try {
                 setIsLoading(true)
                 const response = await searchTraking(inputValue)
-                if (response[0]?.code) {
+                if (response?.results) {
                     void router.push(`/search/${inputValue}`)
                 } else {
                     setIsLoading(false)

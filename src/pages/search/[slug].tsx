@@ -6,10 +6,9 @@ const SearchPage = (props) => <Search {...props} />
 
 export async function getStaticProps(context) {
     const { slug } = context?.params
-    const results = await searchTraking(slug)
-
+    const packageSearch = await searchTraking(slug)
     return {
-        props: results[0],
+        props: { results: packageSearch.results },
     }
 }
 

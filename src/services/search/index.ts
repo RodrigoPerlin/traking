@@ -9,6 +9,5 @@ export const searchTraking = async (code: string) => {
     } catch (error) {
         // eslint-disable-next-line no-console
         console.error('Erro na chamada à API:', error)
-        return []
     }
 }
