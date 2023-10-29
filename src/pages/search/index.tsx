@@ -33,15 +33,15 @@ const Search = ({ results }: ISearch) => {
 
     const statusList = results?.map((item) => item?.status)
 
+    function addList() {
+        const status = listStatus?.map((item, index) => ({
+            status: item,
+            color: statusList[index],
+        }))
+        setStatusPackage(status)
+    }
     useEffect(() => {
-        function adicionarNome() {
-            const status = listStatus?.map((item, index) => ({
-                status: item,
-                color: statusList[index],
-            }))
-            setStatusPackage(status)
-        }
-        adicionarNome()
+        addList()
     }, [])
 
     const temp = () => {
@@ -68,7 +68,7 @@ const Search = ({ results }: ISearch) => {
                     >
                         Página Inicial
                     </Button>
-                    <Box>
+                    <Box m={2}>
                         <Typography
                             gutterBottom
                             variant="h4"
@@ -82,7 +82,12 @@ const Search = ({ results }: ISearch) => {
                 </Box>
             </Box>
 
-            <Grid container>
+            <Grid
+                container
+                display={'flex'}
+                textAlign={'center'}
+                justifyContent={'center'}
+            >
                 {list?.map(({ status, color }, index) => {
                     return (
                         <StatusCircle

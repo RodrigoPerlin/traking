@@ -4,7 +4,6 @@ import Grid from '@mui/material/Grid'
 import Image from 'next/image'
 import imgHome from '../../assets/img/home_correios.webp'
 import * as S from '../../components/Pages/Home/home.styled'
-import CardsHome from '../../components/Pages/Home/CardsHome'
 import ContainerBrand from '../../components/Pages/Home/ContainerBrand'
 import { searchTraking } from '../../services/search'
 import router from 'next/router'
@@ -120,7 +119,7 @@ const Home = ({ lists }: IHomeProps) => {
                 <S.StyledDivider color="#fab013" />
                 <S.StyledDivider color="#19379c" />
             </Box>
-            {lists && <CardsHome lists={lists || []} />}
+            {/* {lists && <CardsHome lists={lists} />} */}
         </Box>
     )
 }
