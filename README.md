@@ -2,6 +2,16 @@
 
 This app is built on the [Next.js](https://nextjs.org/) starter project created with the[`create-next-app`] tool and includes Material UI integration for a more enjoyable experience."
 
+To access the tracking page, use the tracking code below.
+
+```bash
+10Aa  
+```
+or
+```bash
+2020
+```
+
 ## 📋 Requirements
 
 To run the project locally, make sure you have [Node](https://nodejs.org/en/download) installed on your machine, with a version equal to or greater than 18.
@@ -28,12 +38,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 To perform all unit testing, you can simply use the following command:
 
-* [Jest](https://jestjs.io/pt-BR/) - Framework de Testes usado para testes unitarios.  
+* [Jest](https://jestjs.io/pt-BR/) - Testing Framework used for unit testing.  
 ```bash
 yarn test
 ```
 
-* [Cypress](https://docs.cypress.io/guides/overview/why-cypress) - Ferramenta para de Testes E2E.  
+* [Cypress](https://docs.cypress.io/guides/overview/why-cypress) - E2E Testing Tool.  
 
 ```bash
 yarn cy:run
@@ -47,7 +57,7 @@ yarn cy:run
 * [Mui](https://mui.com/) - Customizable, and accessible library of React components.
 
 ## 📦 Environments
-It is possible to use Docker to run Chega.com, using the following steps:
+It is possible to use Docker to run encontre.com, using the following steps:
 
 -  In the project root folder, open the terminal and run the following command to create the image:
 

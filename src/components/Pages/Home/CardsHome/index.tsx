@@ -21,7 +21,7 @@ interface IList {
 const CardsHome = ({ lists }: ICardsHomeProps) => {
     return (
         <Grid gap={5} container justifyContent={'center'}>
-            {lists?.map(({ testimony, name, sku }, index) => {
+            {lists.map(({ testimony, name, sku }, index) => {
                 return (
                     <Grid key={sku + index} item xs={12} sm={3}>
                         <Card border->

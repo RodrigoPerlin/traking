@@ -120,7 +120,7 @@ const Home = ({ lists }: IHomeProps) => {
                 <S.StyledDivider color="#fab013" />
                 <S.StyledDivider color="#19379c" />
             </Box>
-            <CardsHome lists={lists || []} />
+            {lists && <CardsHome lists={lists} />}
         </Box>
     )
 }

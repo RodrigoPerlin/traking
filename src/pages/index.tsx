@@ -12,10 +12,9 @@ export async function getStaticProps() {
         Math?.max(lastIndex - 2, 0),
         lastIndex + 1
     )
-
     return {
         props: {
-            lists: lastThree,
+            lists: lastThree || null,
         },
     }
 }
