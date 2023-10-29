@@ -1,45 +1,61 @@
-# Material UI - Next.js App Router example
+# Encontre.com
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped using [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with Material UI installed.
+This app is built on the [Next.js](https://nextjs.org/) starter project created with the[`create-next-app`] tool and includes Material UI integration for a more enjoyable experience."
 
-## How to use
+## 📋 Requirements
 
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+To run the project locally, make sure you have [Node](https://nodejs.org/en/download) installed on your machine, with a version equal to or greater than 18.
 
-<!-- #default-branch-switch -->
+## 🚀 How to use
+
+[Clone the repo](https:/git@github.com:RodrigoPerlin/traking.git):
+
 
 ```bash
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/material-ui-nextjs
-cd material-ui-nextjs
+git clone git@github.com:RodrigoPerlin/traking.git
 ```
 
 Install it and run:
 
 ```bash
 npm install
-npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-or:
 
-<!-- #default-branch-switch -->
+## 🔩  Running the tests
 
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/material-ui-nextjs)
+To perform all unit testing, you can simply use the following command:
 
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui/material-ui/tree/master/examples/material-ui-nextjs)
+* [Jest](https://jestjs.io/pt-BR/) - Framework de Testes usado para testes unitarios.  
+```bash
+yarn test
+```
 
-## Learn more
+* [Cypress](https://docs.cypress.io/guides/overview/why-cypress) - Ferramenta para de Testes E2E.  
 
-To learn more about this example:
+```bash
+yarn cy:run
+```
 
-- [Next.js documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Customizing Material UI](https://mui.com/material-ui/customization/how-to-customize/) - approaches to customizing Material UI.
+## 🛠️ Built with
 
-## What's next?
+* [Next.js](https://nextjs.org/) - The web framework used
+* [Styled-components](https://styled-components.com/) - Library that allows you to write CSS in JS.
+* [PWA](https://pt.wikipedia.org/wiki/Progressive_web_app) - Progressive Web App.
+* [Mui](https://mui.com/) - Customizable, and accessible library of React components.
 
-<!-- #default-branch-switch -->
+## 📦 Environments
+It is possible to use Docker to run Chega.com, using the following steps:
 
-You now have a working example project.
-You can head back to the documentation and continue by browsing the [templates](https://mui.com/material-ui/getting-started/templates/) section.
+-  In the project root folder, open the terminal and run the following command to create the image:
+
+```bash
+docker build -t docker-next .
+```
+-  In the root folder, run the next command once the previous one is complete, to run the image inside the container.
+```bash
+docker run -p 3000:3000 --rm -d  docker-next:latest
+```
+-  When finished, to view the process, open the browser to the port http://localhost:3000/
