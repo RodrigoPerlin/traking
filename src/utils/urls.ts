@@ -1,4 +1,1 @@
-export const ENVIRONMENT =
-    process.env.NODE_ENV !== 'production'
-        ? 'http://localhost:3000'
-        : 'https://encontrecom.vercel.app/api'
+export const apiHost = process.env.REACT_APP_API_HOST || ''

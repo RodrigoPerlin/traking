@@ -1,8 +1,8 @@
 import axios from 'axios'
-import { ENVIRONMENT } from '../utils/urls'
+import { apiHost } from '../utils/urls'
 
 const api = axios.create({
-    baseURL: ENVIRONMENT,
+    baseURL: apiHost,
 })
 
 export default api

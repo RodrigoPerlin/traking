@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import Grid from '@mui/material/Grid'
-import { Box, Button } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import Table from '../../components/Pages/Search/Table'
 import StatusCircle from '../../components/Pages/Search/StatusCircle'
 
@@ -58,16 +58,30 @@ const Search = ({ results }: ISearch) => {
     }
     return (
         <Box>
-            <Box m={5}>
-                <Button
-                    sx={{ borderColor: '#fab013' }}
-                    variant="outlined"
-                    size="large"
-                    href="/"
-                >
-                    Página Inicial
-                </Button>
+            <Box display={'flex'} justifyContent={'space-between'}>
+                <Box m={5}>
+                    <Button
+                        sx={{ borderColor: '#fab013' }}
+                        variant="outlined"
+                        size="large"
+                        href="/"
+                    >
+                        Página Inicial
+                    </Button>
+                    <Box>
+                        <Typography
+                            gutterBottom
+                            variant="h4"
+                            component="div"
+                            color="#19379c"
+                            fontWeight={800}
+                        >
+                            Status do seu Pedido:
+                        </Typography>
+                    </Box>
+                </Box>
             </Box>
+
             <Grid container>
                 {list?.map(({ status, color }, index) => {
                     return (

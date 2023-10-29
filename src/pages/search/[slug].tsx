@@ -14,13 +14,8 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-    const slugs = ['10Aa', '2020']
-    const path = slugs?.map((slug) => ({
-        params: { slug },
-    }))
-
     return {
-        paths: path,
+        paths: [{ params: { slug: '10Aa' } }, { params: { slug: '2020' } }],
         fallback: false,
     }
 }
