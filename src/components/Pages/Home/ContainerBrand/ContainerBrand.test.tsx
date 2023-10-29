@@ -8,7 +8,7 @@ describe('CardsContainerBrand Component', () => {
     const handleClickMock = jest.fn()
     const handleChangeMock = jest.fn()
     const inputValueMock = '11111'
-
+    const isLoadingMock = false
     it('render a ContainerBrand with encontre.com correct', () => {
         render(
             <ContainerBrand
@@ -16,6 +16,7 @@ describe('CardsContainerBrand Component', () => {
                 handleChange={handleChangeMock}
                 handleClick={handleClickMock}
                 handleKeyDown={handleKeyDownMock}
+                isLoading={isLoadingMock}
             />
         )
 
@@ -29,6 +30,7 @@ describe('CardsContainerBrand Component', () => {
                 handleChange={handleChangeMock}
                 handleClick={handleClickMock}
                 handleKeyDown={handleKeyDownMock}
+                isLoading={isLoadingMock}
             />
         )
 

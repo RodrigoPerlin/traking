@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Box, Button, TextField, Typography } from '@mui/material'
 import SendIcon from '@mui/icons-material/Send'
-import CircularProgress from '@mui/material/CircularProgress'
+import HourglassBottomIcon from '@mui/icons-material/HourglassBottom'
 
 interface IContainerBrand {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -11,7 +11,7 @@ interface IContainerBrand {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     handleChange: (e: any) => any
     inputValue: string
-    helperText: string
+    helperText?: string
     isLoading: boolean
 }
 
@@ -23,7 +23,7 @@ const ContainerBrand = ({
     helperText,
     isLoading,
 }: IContainerBrand) => {
-    const icon = isLoading ? <CircularProgress /> : <SendIcon />
+    const icon = isLoading ? <HourglassBottomIcon /> : <SendIcon />
 
     return (
         <Box minHeight={'70vh'} textAlign={'center'}>
@@ -60,6 +60,7 @@ const ContainerBrand = ({
                             handleKeyDown(e)
                         }}
                         variant="outlined"
+                        data-cy="button-send"
                         size="large"
                         disabled={isLoading}
                         endIcon={icon}
