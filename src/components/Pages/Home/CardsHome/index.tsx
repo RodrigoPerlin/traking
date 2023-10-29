@@ -38,7 +38,6 @@ const CardsHome = ({ lists }: ICardsHomeProps) => {
                                     variant="body2"
                                     color="text.secondary"
                                     minHeight={80}
-                                    text-overflow
                                     data-testid="testimony-element"
                                 >
                                     {testimony}

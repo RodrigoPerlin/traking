@@ -10,7 +10,6 @@ class MyDocument extends Document {
                     <link rel="manifest" href="/manifest.json" />
                     <meta name="theme-color" content="#fff" />
                     <link rel="icon" href="/favicon.ico" />
-                    <title>Encontrei</title>
                 </Head>
                 <body>
                     <Main />
