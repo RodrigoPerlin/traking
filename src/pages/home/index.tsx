@@ -22,11 +22,11 @@ interface IList {
 const Home = ({ lists }: IHomeProps) => {
     const [inputValue, setInputValue] = useState('')
     const [nullValue, setNullValue] = useState<boolean>(true)
-    const [isPackage, setIsPackage] = useState<boolean>(false)
+    const [isNotPackage, setNotIsPackage] = useState<boolean>(false)
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
     const handleClose = () => {
-        setIsPackage(false)
+        setNotIsPackage(false)
     }
 
     const handleChange = (e) => {
@@ -36,33 +36,21 @@ const Home = ({ lists }: IHomeProps) => {
     async function handleClick() {
         if (inputValue) {
             try {
+                setIsLoading(true)
                 const response = await searchTraking(inputValue)
                 if (response[0]?.code) {
-                    setIsLoading(true)
                     void router.push(`/search/${inputValue}`)
                 } else {
-                    setIsPackage(true)
+                    setIsLoading(false)
+
+                    setNotIsPackage(true)
                 }
             } catch (error) {
-                setIsPackage(false)
-                console.error(error)
+                setNotIsPackage(false)
             }
         } else {
             setNullValue(false)
         }
-    }
-
-    const style = {
-        position: 'absolute' as 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: 400,
-        color: '#19379c',
-        bgcolor: 'background.paper',
-        border: '2px solid #fab013',
-        boxShadow: 24,
-        p: 4,
     }
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -77,7 +65,7 @@ const Home = ({ lists }: IHomeProps) => {
         !nullValue && !inputValue
             ? 'Insira o código de rastreamento para localizar o seu pacote com facilidade'
             : ''
-    console.log(nullValue, !inputValue)
+
     return (
         <Box>
             <Grid gap={3} container alignItems={'center'}>
@@ -105,12 +93,13 @@ const Home = ({ lists }: IHomeProps) => {
             </Grid>
 
             <Modal
-                open={isPackage}
+                open={isNotPackage}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
+                id="modal-no-acess"
             >
-                <Box sx={style}>
+                <Box sx={S.style}>
                     <Typography
                         id="modal-modal-title"
                         variant="h4"
