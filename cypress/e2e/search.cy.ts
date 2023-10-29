@@ -1,14 +1,9 @@
-describe('home', () => {
+describe('search', () => {
     beforeEach(() => {
         cy.visit('http://localhost:3000')
     })
 
-    it('search img and TextField', () => {
-        cy.get('[data-cy="codigo-rastreio"]').should('be.visible')
-        cy.get('[data-cy="img-home"]').should('be.visible')
-    })
-
-    it('Writer TextField', () => {
+    it('redirect page search', () => {
         cy.get('[data-cy="codigo-rastreio"]').type('1021')
         cy.get('[data-cy="button-send"]').type('{enter}')
         cy.get('#modal-no-acess').should('be.visible')
