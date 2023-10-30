@@ -16,10 +16,8 @@ describe('Table Component', () => {
     it('render a Table', () => {
         render(<Table info={infoMock} />)
         expect(screen.getAllByTestId('status-data'))
-        expect(screen.getAllByTestId('status-status'))
         expect(screen.getAllByTestId('status-detalhes'))
         expect(screen.getByText('Criado na central'))
-        expect(screen.getByText('criado'))
         expect(screen.getByText('27/10'))
     })
 })

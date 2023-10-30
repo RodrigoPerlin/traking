@@ -9,8 +9,8 @@ describe('home', () => {
     })
 
     it('Writer TextField', () => {
-        cy.get('[data-cy="codigo-rastreio"]').type('1021')
-        cy.get('[data-cy="button-send"]').type('{enter}')
+        cy.get('[data-cy="codigo-rastreio"]').find('input').type('222')
+        cy.get('[data-cy="button-send"]').wait(1000).click()
         cy.get('#modal-no-acess').should('be.visible')
         cy.get('#modal-modal-title').should('contain', 'Opssss')
         cy.get('#modal-modal-description').should(

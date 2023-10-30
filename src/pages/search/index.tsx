@@ -65,6 +65,7 @@ const Search = ({ results }: ISearch) => {
                         variant="outlined"
                         size="large"
                         href="/"
+                        id="button-page-home"
                     >
                         Página Inicial
                     </Button>
@@ -74,6 +75,7 @@ const Search = ({ results }: ISearch) => {
                             variant="h4"
                             component="div"
                             color="#19379c"
+                            id="title-status"
                             fontWeight={800}
                         >
                             Status do seu Pedido:
@@ -87,6 +89,7 @@ const Search = ({ results }: ISearch) => {
                 display={'flex'}
                 textAlign={'center'}
                 justifyContent={'center'}
+                id="status-circle"
             >
                 {list?.map(({ status, color }, index) => {
                     return (

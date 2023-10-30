@@ -8,9 +8,10 @@ import ContainerBrand from '../../components/Pages/Home/ContainerBrand'
 import { searchTraking } from '../../services/search'
 import router from 'next/router'
 import { Modal, Typography } from '@mui/material'
+import CardsHome from '../../components/Pages/Home/CardsHome'
 
 interface IHomeProps {
-    lists: IList[]
+    lists?: IList[]
 }
 interface IList {
     sku: string
@@ -119,7 +120,8 @@ const Home = ({ lists }: IHomeProps) => {
                 <S.StyledDivider color="#fab013" />
                 <S.StyledDivider color="#19379c" />
             </Box>
-            {/* {lists && <CardsHome lists={lists} />} */}
+
+            {lists && <CardsHome lists={lists} />}
         </Box>
     )
 }

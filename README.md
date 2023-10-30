@@ -30,11 +30,19 @@ git clone git@github.com:RodrigoPerlin/traking.git
 Install it and run:
 
 ```bash
-npm install
+yarn install
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+
+## 📋 Run project
+
+To run the project, use the following command:
+
+```bash
+yarn dev
+```
 
 ## 🔩  Running the tests
 

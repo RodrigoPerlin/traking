@@ -62,6 +62,7 @@ const ContainerBrand = ({
                         variant="outlined"
                         data-cy="button-send"
                         size="large"
+                        id="button-send"
                         disabled={isLoading}
                         endIcon={icon}
                         onClick={handleClick}

@@ -10,7 +10,7 @@ import {
 } from '@mui/material'
 
 interface ICardsHomeProps {
-    lists: IList[]
+    lists?: IList[]
 }
 interface IList {
     sku: string
@@ -18,7 +18,7 @@ interface IList {
     testimony: string
 }
 
-const CardsHome = ({ lists }: ICardsHomeProps) => {
+const CardsHome = ({ lists = [] }: ICardsHomeProps) => {
     return (
         <Grid gap={5} container justifyContent={'center'}>
             {lists?.map(({ testimony, name, sku }, index) => {
